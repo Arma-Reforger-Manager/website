@@ -13,6 +13,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 16
+      - run: cd src
       - run: npm ci
       - run: npm test
 
@@ -24,8 +25,6 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-        with:
-            path: './src'
       - uses: actions/setup-node@v4
         with:
           node-version: 16
