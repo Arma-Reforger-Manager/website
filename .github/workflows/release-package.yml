@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: 16
       - run: ls -a
-      - run: cd /home/runner/work/website/src
+      - run: cd src
       - run: npm ci
       - run: npm test
 
@@ -31,7 +31,7 @@ jobs:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
       - run: ls -a
-      - run: cd /home/runner/work/website/src
+      - run: cd src
       - run: npm ci
       - run: npm publish
         env:
