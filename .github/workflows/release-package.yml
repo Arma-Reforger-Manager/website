@@ -19,6 +19,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com/'
           node-version: 'lts/*'
           token: '${{ secrets.GITHUB_TOKEN }}'
+          run: cd src
 
       - run: cd src && npm ci
 
