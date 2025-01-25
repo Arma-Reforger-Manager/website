@@ -29,5 +29,5 @@ jobs:
       - run: npm run build
         working-directory: ./src
 
-      - run: npm publish
+      - run: npm publish --scope=@arma-reforger-manager
         working-directory: ./src
