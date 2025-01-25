@@ -8,9 +8,6 @@ on:
 jobs:
   publish-gpr:
     runs-on: ubuntu-latest
-    defaults:
-        run:
-            working-directory: /home/runner/work/website/src
     permissions:
       packages: write
       contents: read
@@ -26,10 +23,12 @@ jobs:
           registry-url: 'https://npm.pkg.github.com/'
           token: ${{ secrets.GITHUB_TOKEN }}
           always-auth: true
-          cache: 'npm'
 
       - run: npm ci
+        working-directory: ./src
 
       - run: npm run build
+        working-directory: ./src
 
       - run: npm publish
+        working-directory: ./src
