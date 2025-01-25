@@ -13,7 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 16
-      - run: cd .\\src
+      - run: ls -a
+      - run: cd /home/runner/work/website/src
       - run: npm ci
       - run: npm test
 
@@ -29,7 +30,8 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: cd .\\src
+      - run: ls -a
+      - run: cd /home/runner/work/website/src
       - run: npm ci
       - run: npm publish
         env:
