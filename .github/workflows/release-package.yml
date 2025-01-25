@@ -16,7 +16,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           registry-url: https://npm.pkg.github.com/
-          node-version: 16
           node-version-file: '.npmrc'
       - run: cd src && npm ci
       - run: cd src && npm run build
