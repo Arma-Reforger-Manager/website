@@ -1,5 +1,5 @@
 {
-  "name": "angular",
+  "name": "@arma-reforger-manager/website",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
