@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
         run:
-            working-directory: src
+            working-directory: /home/runner/work/website/src
     permissions:
       packages: write
       contents: read
