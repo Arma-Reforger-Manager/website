@@ -20,6 +20,8 @@ jobs:
         with:
           registry-url: 'https://npm.pkg.github.com/'
           token: ${{ secrets.GITHUB_TOKEN }}
+        
+      - run: cat /home/runner/work/_temp/.npmrc
 
       - run: npm ci
         working-directory: ./src
