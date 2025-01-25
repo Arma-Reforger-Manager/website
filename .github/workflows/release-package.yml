@@ -16,8 +16,8 @@ jobs:
       
       - uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
-          registry-url: https://npm.pkg.github.com/
+          registry-url: 'https://npm.pkg.github.com/'
+          node-version: 'lts/*'
 
       - run: cd src && npm ci
 
