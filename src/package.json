@@ -9,7 +9,7 @@
     "test": "ng test"
   },
   "publishConfig": {
-    "Arma-Reforger-Manager:website": "https://npm.pkg.github.com"
+    "Arma-Reforger-Manager/website:registry": "https://npm.pkg.github.com"
   },
   "private": true,
   "dependencies": {
