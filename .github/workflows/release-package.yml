@@ -15,8 +15,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
           registry-url: https://npm.pkg.github.com/
+          node-version: 16
+          node-version-file: '.nvmrc'
       - run: cd src && npm ci
       - run: cd src && npm run build
       - run: cd src && npm publish
