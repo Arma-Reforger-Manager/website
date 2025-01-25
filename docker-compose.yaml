@@ -1,5 +1,6 @@
 services:
   web:
+    container_name: application_website
     build:
       context: ./src
       target: builder
