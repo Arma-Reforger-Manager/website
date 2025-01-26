@@ -1,16 +1,47 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthServiceService } from '../auth.service';
 
 @Component({
-  selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  standalone: false
+	selector: 'login',
+	templateUrl: './login.component.html',
+	styleUrls: ['./login.component.css'],
+	standalone: true,
+	imports: [
+		ReactiveFormsModule 
+	]
 })
 export class LoginComponent implements OnInit {
+	form: FormGroup;
+	standalone  = true;
 
-  constructor() { }
+	constructor(
+		private fb: FormBuilder,
+		private authService: AuthServiceService,
+		private router: Router
+	) {
+		this.form = this.fb.group({
+			email: ['', Validators.required],
+			password: ['', Validators.required]
+		});
+	}
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
+	login() {
+		const val = this.form.value;
+
+		if (val.email && val.password) {
+			this.authService.login(val.email, val.password)
+				.subscribe(
+					(data) => {
+						console.log(data)
+						console.log("User is logged in");
+						// this.router.navigateByUrl('/');
+					}
+				);
+		}
+	}
 }

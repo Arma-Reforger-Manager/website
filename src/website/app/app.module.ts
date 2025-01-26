@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
+import { AuthServiceService } from './auth.service';
 
 
 @Component({
@@ -20,6 +23,7 @@ export class AppComponent {
 
 @NgModule({
   declarations: [
+    
   ],
   imports: [
     BrowserModule,
@@ -28,9 +32,10 @@ export class AppComponent {
     RouterLinkActive,// add here if necessasry
     RouterOutlet, // add here if necessasry
     RouterLink,// add here if necessasry
-    
+    LoginComponent,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthServiceService],
   bootstrap: [AppComponent, LoginComponent]
 })
 export class AppModule { }
