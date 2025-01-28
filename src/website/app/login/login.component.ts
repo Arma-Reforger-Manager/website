@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthServiceService } from '../auth.service';
+import GLOBALS from '../globals';
 
 @Component({
 	selector: 'login',
@@ -39,6 +40,9 @@ export class LoginComponent implements OnInit {
 					(data) => {
 						console.log(data)
 						console.log("User is logged in");
+						if (data.jwt) {
+							GLOBALS.jwt = data.jwt;
+						}
 						// this.router.navigateByUrl('/');
 					}
 				);

@@ -8,10 +8,10 @@ WORKDIR /project
 RUN npm install -g @angular/cli@13
 
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm i
 
 COPY . .
-CMD ["ng", "serve", "--host", "0.0.0.0"]
+CMD ["ng", "serve", "--host", "0.0.0.0", "---configuration=production"]
 
 FROM builder as dev-envs
 
