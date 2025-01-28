@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { AuthServiceService } from '../auth.service';
 import GLOBALS from '../globals';
-import { environment } from '../../environments/environment';
+import { environment } from '../environments/environment';
 
 @Component({
 	selector: 'login',

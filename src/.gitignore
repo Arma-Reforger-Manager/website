@@ -47,3 +47,4 @@ Thumbs.db
 
 # Production envs
 *environment.prod.ts*
+src\website\environments\environment.prod.ts

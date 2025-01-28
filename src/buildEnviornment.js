@@ -6,5 +6,8 @@ const outputToFIle = {
     API_BEARER_TOKEN: process.env['API_BEARER_TOKEN'],
 }
 
-mkdirSync('/project/website/environments/', { recursive: true });
-writeFileSync('/project/website/environments/environment.prod.ts', `export const environment = ${JSON.stringify(outputToFIle, null, 4)};`);
+const dir = mkdirSync('/project/website/app/environments/', { recursive: true });
+const file1 = writeFileSync('/project/website/app/environments/environment.ts', `export const environment = ${JSON.stringify(outputToFIle, null, 4)};`, 'hex');
+// const file = writeFileSync('/project/website/app/environments/environment.ts', `export const environment = ${JSON.stringify(outputToFIle, null, 4)};`);
+
+console.debug({dir, file1})

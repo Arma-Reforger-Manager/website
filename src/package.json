@@ -1,6 +1,7 @@
 {
   "name": "@arma-reforger-manager/website",
   "version": "0.1.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --configuration=development",

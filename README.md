@@ -27,5 +27,5 @@ The [Arma-Reforger-Manager website](https://github.com/Arma-Reforger-Manager/web
 1. `cd src`
 2. `npm i`
 3. `npm run start`
-
+Go to http://localhost:4200/
 ---  
