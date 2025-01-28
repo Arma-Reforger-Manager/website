@@ -9,6 +9,8 @@ RUN npm install -g @angular/cli@13
 
 COPY package.json package-lock.json ./
 RUN npm i
+COPY buildEnviornment.js .
+RUN npm run build:env
 
 COPY . .
 CMD ["ng", "serve", "--host", "0.0.0.0", "---configuration=production"]
