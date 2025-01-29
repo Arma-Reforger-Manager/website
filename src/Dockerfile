@@ -5,7 +5,7 @@ FROM --platform=$BUILDPLATFORM node:latest as builder
 RUN mkdir /project
 WORKDIR /project
 
-RUN npm install -g @angular/cli@13
+RUN npm install -g @angular/cli@19.1.4
 
 COPY package.json package-lock.json ./
 RUN npm i
