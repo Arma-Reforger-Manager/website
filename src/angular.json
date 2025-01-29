@@ -47,8 +47,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "website/environments/environment.ts",
-                  "with": "website/environments/environment.prod.ts"
+                  "replace": "website/environments/environment.development.ts",
+                  "with": "website/environments/environment.ts"
                 }
               ],
               "outputHashing": "all"
