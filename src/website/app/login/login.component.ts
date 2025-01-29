@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { AuthServiceService } from '../auth.service';
 import GLOBALS from '../globals';
-import { environment } from '../environments/environment';
+import { environment } from 'website/environments/environment';
 
 @Component({
 	selector: 'login',
@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	login() {
+		console.debug({environment})
 		const val = this.form.value;
 
 		if (val.email && val.password) {
@@ -41,7 +42,6 @@ export class LoginComponent implements OnInit {
 					(data) => {
 						console.log(data)
 						console.log("User is logged in");
-						console.debug(environment)
 						if (data.jwt) {
 							GLOBALS.jwt = data.jwt;
 						}
