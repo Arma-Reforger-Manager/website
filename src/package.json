@@ -25,14 +25,14 @@
     "@angular-devkit/build-angular": "*",
     "@angular/cli": "*",
     "@angular/compiler-cli": "*",
-    "@types/jasmine": "~5.1.5",
-    "@types/node": "^22.12.0",
-    "jasmine-core": "~5.5.0",
-    "karma": "^6.3.17",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.0.3",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
+    "@types/jasmine": "*",
+    "@types/node": "*",
+    "jasmine-core": "*",
+    "karma": "*",
+    "karma-chrome-launcher":"*",
+    "karma-coverage": "*",
+    "karma-jasmine": "*",
+    "karma-jasmine-html-reporter": "*",
     "typescript": "*"
   }
 }
