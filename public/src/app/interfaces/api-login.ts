@@ -1,4 +1,5 @@
 export interface ApiLogin {
     success: boolean
-    jwt: string
+    token: string
+    expiration_ms: number
 }

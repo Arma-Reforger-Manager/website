@@ -1,0 +1,23 @@
+<h3>INDEX</h3>
+<p>Get your login here</p>
+
+<div *ngIf="login === false;">
+    <form [formGroup]="form">
+        <fieldset>
+            <legend>Login</legend>
+            <div class="form-field">
+                <label>Credential:</label>
+                <input name="email" formControlName="email">
+            </div>
+            <div class="form-field">
+                <label>Password:</label>
+                <input name="password" formControlName="password" 
+                       type="password" autocomplete="current-password">
+            </div>
+        </fieldset>
+        <div class="form-buttons">
+            <button class="button button-primary" 
+                    (click)="login_button()">Login</button>
+        </div>
+    </form>
+</div>

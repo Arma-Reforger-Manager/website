@@ -1,21 +1,26 @@
-<h1>Angular Router Sample</h1>
+<h1>Reforger Manager</h1>
 ...
-<!-- <app-crisis-list></app-crisis-list>
-<app-heroes-list></app-heroes-list> -->
-<router-outlet></router-outlet>
-
 
 <nav>
   <a class="button"
      routerLink="/crisis-list"
      routerLinkActive="activebutton"
      ariaCurrentWhenActive="page">
-    Crisis Center
+    Index
   </a> |
   <a class="button"
-     routerLink="/heroes-list"
+     routerLink="/logs"
      routerLinkActive="activebutton"
      ariaCurrentWhenActive="page">
-    Heroes
+    Logs
+  </a>
+  <a class="button login"
+     routerLink="/login"
+     routerLinkActive="activebutton"
+     ariaCurrentWhenActive="page">
+    Login
   </a>
 </nav>
+
+
+<router-outlet></router-outlet>

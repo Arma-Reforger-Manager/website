@@ -1,6 +1,6 @@
 {
-  "name": "angular-router-sample",
-  "version": "0.0.0",
+  "name": "@arma-reforger-manager/website",
+  "version": "0.3.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --configuration=development",

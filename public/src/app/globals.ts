@@ -1,5 +1,6 @@
 'use strict';
 
 export default {
-    jwt: ''
+    jwt: '',
+    login: false
 }
