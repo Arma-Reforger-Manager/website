@@ -1,11 +1,15 @@
 <p>logs works!</p>
 <section class="center-form">
+    <strong>Page Definition</strong>:  <br/>
+    You start by searching for a logging group. <br/>
+    You will see a grid of groups after search with a valid input. <br/>
+    You can only open un-claimed groups or groups claimed by you. <br/> <br/>
     <strong>Valid Inputs</strong>: IPv4, IPv6, Server Token, Website Token, or IPv4:Port.
-    <br/>
-   <strong> Inputs are case-sensitive!</strong>
-    <br/>
+    <br />
+    <strong> Inputs are case-sensitive!</strong>
+    <br />
     <Strong>Examples:</Strong>
-    <br/>
+    <br />
     <textarea rows="6" cols="60" disabled rea="none">
 
         Website Token == token_website_01pqowie92
@@ -14,20 +18,28 @@
         IPv4 with Port == 127.0.0.1:3306
     </textarea>
 </section>
-<br/>
+<br />
 <div *ngIf="showError" class="colorRed center-form">
     <h3> {{errorMessage}} </h3>
 </div>
 <section>
     <form [formGroup]="form" class="center-form">
         <input type="text" placeholder="Filter by input of > 3 letters" name="value" formControlName="value">
-        <button class="primary" type="button" (click)="SubmitSearch()">Search</button> | 
-        <button class="primary" type="button" (click)="SubmitSearch()" [disabled]="!enhancedSearch">Enhanced Search</button>
+        <button class="primary" type="button" (click)="SubmitSearch()">Search</button>
+        <!-- <button class="primary" type="button" (click)="SubmitSearch()" [disabled]="!enhancedSearch">Enhanced
+            Search</button> -->
     </form>
 </section>
-<section class="values">
-    <div 
-        *ngFor="let value of values">
-        {{value}}
+<section *ngIf="values" class="values">
+    <div *ngIf="values.success">
+        <div *ngFor="let value of values.results" class="selectionDiv">
+            <textarea rows="5" cols="46" disabled rea="none">
+
+ Website Token = {{value.token}}
+ Server Token = {{value.server.token}}
+ IPv4 : Port = {{value.server.ip}}:{{value.server.port}}
+            </textarea>
+            <button class="primary" type="button">Select</button>
+        </div>
     </div>
 </section>

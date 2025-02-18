@@ -1,10 +1,13 @@
-export interface LogSearch {
-    token: string
-    server: {
-        ip: string
-        port: number
+export interface Logs {
+    success: boolean
+    results: [{
         token: string
-    }
+        server: {
+            ip: string
+            port: number
+            token: string
+        }
+    }]
 }
 
 export type LogSearchFormats = 

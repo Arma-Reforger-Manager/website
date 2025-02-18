@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { LogSearch, LogSearchFormats } from '../interfaces/logs';
+import { Logs, LogSearchFormats } from '../interfaces/logs';
 import { LogsService } from '../logs.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { LogsService } from '../logs.service';
 })
 export class LogsComponent {
 	form: FormGroup;
-	values: LogSearch[];
+	values: Logs | null;
 	enhancedSearch = false;
 	searchValue = 'NONE';
 	searchFormat: LogSearchFormats = 'SERVER.TOKEN';
@@ -21,7 +21,7 @@ export class LogsComponent {
 	errorMessage = 'NONE';
 
 	constructor(private fb: FormBuilder, private logsService: LogsService, private router: Router) {
-		this.values = [];
+		this.values = null;
 		this.form = this.fb.group({
 			value: ['', Validators.required],
 		});
@@ -36,12 +36,12 @@ export class LogsComponent {
 		if (ToProcess.substring(0, 5) === 'token') {
 			if (ToProcess.substring(6, 13) === 'website') {
 				this.searchFormat = 'WEBSITE.TOKEN';
-				this.searchValue = ToProcess.substring(14, ToProcess.length)
+				this.searchValue = ToProcess
 				return true
 			}
 			if (ToProcess.substring(6, 12) === 'server') {
-				this.searchFormat = 'IPV4.PORT';
-				this.searchValue = ToProcess.substring(13, ToProcess.length)
+				this.searchFormat = 'SERVER.TOKEN';
+				this.searchValue = ToProcess
 				return true
 			}
 		}
@@ -89,8 +89,14 @@ export class LogsComponent {
 				console.debug({one: this.searchValue, two: this.searchFormat})
 				this.enhancedSearch = !this.enhancedSearch;
 				
-				this.logsService.SearchWithValue(this.searchValue, this.searchFormat).subscribe((value) => {
-					console.debug({value})
+				this.logsService.SearchWithValue(this.searchValue, this.searchFormat).subscribe(value=> {
+					if (value.success === false) {
+						this.values = null
+						this.showError = true;
+						this.errorMessage = `Search returned no result, for, "${val.value}"`
+						this.enhancedSearch = !this.enhancedSearch;
+						return
+					}
 					this.values = value;
 				})
 			}
