@@ -1,23 +1,26 @@
-<h3>INDEX</h3>
-<p>Get your login here</p>
-
 <div *ngIf="login === false;">
-    <form [formGroup]="form">
+    <form [formGroup]="form" class="form">
         <fieldset>
             <legend>Login</legend>
+            <br />
+            <p>
+                Enter in Username, Email, Phone Number, or Account Identifier
+            </p>
+            <br />
             <div class="form-field">
-                <label>Credential:</label>
-                <input name="email" formControlName="email">
+                <label>Credential: </label>
+                <input name="email" formControlName="email" autocomplete="username">
             </div>
             <div class="form-field">
-                <label>Password:</label>
-                <input name="password" formControlName="password" 
-                       type="password" autocomplete="current-password">
+                <label>Password: </label>
+                <input name="password" formControlName="password" type="password" autocomplete="current-password">
             </div>
+            <br />
+            <div class="form-buttons">
+                <button class="button button-primary" (click)="login_button()">Login</button> | 
+                <button class="button" (click)="register_button()">Register</button>
+            </div>
+            <br />
         </fieldset>
-        <div class="form-buttons">
-            <button class="button button-primary" 
-                    (click)="login_button()">Login</button>
-        </div>
     </form>
 </div>

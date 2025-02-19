@@ -24,6 +24,10 @@ export class LoginComponent {
 
 	}
 
+	register_button() {
+		this.router.navigateByUrl('/register');
+	}
+
 	login_button() {
 		const val = this.form.value;
 

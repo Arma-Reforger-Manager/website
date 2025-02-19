@@ -1,3 +1,7 @@
+.center {
+    text-align: center;
+}
+
 button {
     padding: 10px;
     border: solid 1px var(--primary-color);
@@ -15,8 +19,7 @@ input[type="text"] {
     width: 30%;
 }
 
-.form {
-    text-align: center;
-    width: 60%;
+form {
+    width: 70%;
     margin: 0 auto;
 }
